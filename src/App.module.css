@@ -1,0 +1,30 @@
+
+.App {
+  text-align: center;
+}
+
+.appContainer{
+    width: 70vw;
+    display: flex; 
+    background: linear-gradient(123.54deg, #131313 -1.2%, #676767 94.45%);
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+}
+
+
+.mainWhiteContainer {
+  width: 100%;
+  height: 100vh;           /* viewport height, not width */
+  display: flex;           /* flexbox is implied but must be explicitly set */
+  flex-direction: column;  /* stacks content vertically */
+  position: relative;
+  transition: opacity 0.2s linear;
+  overflow-y: auto;        /* automatically adds scroll only if needed */
+  overflow-x: hidden;      /* avoid horizontal scrollbars */
+  background: white;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
