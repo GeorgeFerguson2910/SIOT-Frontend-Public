@@ -1,5 +1,4 @@
-import styles from './ModuleMain.module.css'; //styles
-import { useCallback } from 'react';
+import styles from './ModuleMain.module.css'; 
 
 
 const ModuleMain = ({

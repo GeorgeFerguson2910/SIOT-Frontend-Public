@@ -1,9 +1,7 @@
-/* src/pages/Login.module.css */
-
 .container {
   width: 100vw;
   height: 100vh;
-  background: #f3f4f6;             /* light grey */
+  background: #f3f4f6;      
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +50,7 @@
 
 .input:focus {
   outline: none;
-  border-color: #2563eb;           /* nice blue */
+  border-color: #2563eb;      
   box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
 }
 

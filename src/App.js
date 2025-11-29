@@ -6,8 +6,9 @@ import PubMed from './Pages/PubMed';
 import PMC from './Pages/PMC';
 import History from './Pages/History';
 import Login from './Pages/Login';
+import LivePlant from './Pages/LivePlant';
 
-// Simple auth check
+// auth check
 const isAuthenticated = () => {
   return !!localStorage.getItem("token"); // true if token exists
 };
@@ -24,13 +25,13 @@ const App = () => {
   return (
     <div className={styles.appContainer}>
 
-      {/* If NOT logged in → hide sidebar */}
+      {/* no sidebar for login page */}
       {isAuthenticated() && <Sidebar />}
 
       <div className={styles.mainWhiteContainer}>
         <Routes>
 
-          {/* Public route */}
+          {/* Public routes */}
           <Route path="/login" element={<Login />} />
 
           {/* Protected routes */}
@@ -39,6 +40,15 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <PubMed />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/Live-Plant"
+            element={
+              <ProtectedRoute>
+                <LivePlant />
               </ProtectedRoute>
             }
           />

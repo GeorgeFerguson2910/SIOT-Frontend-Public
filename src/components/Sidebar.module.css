@@ -13,7 +13,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    pointer-events: auto; /* optional: still allows interaction like clicking */
+    pointer-events: auto;
 }
 
 .menuItems {

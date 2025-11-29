@@ -1,7 +1,6 @@
-// src/pages/Login.js
 import React, { useState } from "react";
 import styles from "./Login.module.css";
-import { API } from "../config/api";   // 👈 adjust path if needed
+import { API } from "../config/api";  //api helper
 
 export default function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -15,7 +14,7 @@ export default function Login({ onLogin }) {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API}/login`, {   // 👈 using your API helper
+      const res = await fetch(`${API}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

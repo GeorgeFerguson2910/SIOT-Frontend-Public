@@ -21,6 +21,17 @@ const Sidebar = () => {
 
         <li>
         <NavLink
+          to="/Live-Plant"
+          className={({ isActive }) =>
+            isActive ? styles.menuItemSelected : styles.menuItem
+          }
+        >
+          Live Plant
+        </NavLink>
+        </li>
+
+        <li>
+        <NavLink
           to="/PMC"
           className={({ isActive }) =>
             isActive ? styles.menuItemSelected : styles.menuItem
