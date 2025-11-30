@@ -1,0 +1,51 @@
+.root {
+  padding: 1.5rem;
+  background: #05070c;
+  color: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0 0 0.75rem 0;
+}
+
+.loading {
+  padding: 1.5rem;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.sectionTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.gaugeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .sectionGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

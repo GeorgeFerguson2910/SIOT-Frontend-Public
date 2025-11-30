@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
-import { API } from "../config/api";  //api helper
+import { API } from "../config/api";
 
 export default function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -8,37 +8,45 @@ export default function Login({ onLogin }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setError("");
+  setLoading(true);
 
-    try {
-      const res = await fetch(`${API}/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+  try {
+    const res = await fetch(`${API}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Login failed");
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || "Login failed");
 
-      // Save token + user
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
-      localStorage.setItem("isAdmin", JSON.stringify(data.isAdmin));
+    const payload = json.data || json;
+    const { token, user, isAdmin } = payload;
 
-      if (onLogin) {
-        onLogin(data.user);
-      } else {
-        window.location.href = "/PubMed";
-      }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+    console.log("LOGIN RESPONSE:", json);
+    console.log("TOKEN FROM SERVER:", token);
+
+    // Save token + user
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
+
+    if (onLogin) {
+      onLogin(user);
+    } else {
+      window.location.href = "/PubMed";
     }
-  };
+  } catch (err) {
+    setError(err.message);
+  } finally {
+    setLoading(false);
+  }
+};
+
+
 
   return (
     <div className={styles.container}>
