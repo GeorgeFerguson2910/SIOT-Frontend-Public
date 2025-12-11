@@ -13,7 +13,7 @@ const LivePlant = () => {
   const { latest } = usePlantLiveData();
 
   if (!latest) {
-    return <div className={styles.loading}>Waiting for data...</div>;
+    return <div className={styles.loading}>Waiting for data... Python file called sim_engine in plant simulator repo must be running to view live plant data</div>;
   }
 
   const { ts, metrics = {}, device_id, nodeId } = latest;
