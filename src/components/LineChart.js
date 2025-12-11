@@ -117,7 +117,10 @@ export default function LineChart({
           grid: { color: "rgba(255, 255, 255, 0.1)" },
           ticks: {
             color: "rgba(255, 255, 255, 0.8)",
-            callback: (v) => `${v}${unit ? ` ${unit}` : ""}`,
+            callback: (v) => {
+              const val = typeof v === "number" ? v.toFixed(1) : v;
+              return `${val}${unit ? ` ${unit}` : ""}`;
+            },
           },
         },
       },
