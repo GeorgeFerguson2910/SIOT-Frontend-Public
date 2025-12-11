@@ -1,5 +1,4 @@
-# Server
+# Frontend
 
-The SIoT server is a Node/Express backend responsible for ingesting sensor data, managing the plant history database, validating incoming metrics, and exposing a unified API for the frontend. It handles caching, alert generation, fault detection, and the same message format that the real Raspberry Pi edge nodes would send. This allows the whole stack to operate identically between real and simulated data sources.
-
+The SIoT frontend is a React-based dashboard designed to visualise real-time and historical data streams from the Black Bull Biochar plant. It provides interactive charts, live system status, fault alerts, and configurable filters for exploring plant behaviour over time. The UI mirrors the look and structure of the production monitoring system, making it suitable for both demonstration and future deployment.
 
