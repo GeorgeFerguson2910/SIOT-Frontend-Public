@@ -11,7 +11,7 @@ import {
 } from "chart.js";
 import "chartjs-adapter-date-fns";
 import { Line } from "react-chartjs-2";
-import styles from "./lineChart.module.css";
+import styles from "./LineChart.module.css";
 
 const rangeBandsPlugin = {
   id: "rangeBands",
