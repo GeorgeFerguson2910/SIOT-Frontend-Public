@@ -37,7 +37,7 @@ const handleLogin = async (e) => {
     if (onLogin) {
       onLogin(user);
     } else {
-      window.location.href = "/PubMed";
+      window.location.href = "/Live-Plant"; // redirect to protected page
     }
   } catch (err) {
     setError(err.message);
