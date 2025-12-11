@@ -4,7 +4,9 @@
     justify-content: flex-start;
     width: 100%;
     min-height: fit-content;
-    font-family: "FontAwesome";
+
+    /* FIX: use normal text font */
+    font-family: "Roboto", system-ui, sans-serif;
     font-size: 1.7rem;
 }
 
@@ -16,18 +18,23 @@
     justify-content: flex-start;
 }
 
-
 .header {
     font-size: 4rem;
     margin: 0;
+
+    /* optional: ensure normal font */
+    font-family: "Roboto", system-ui, sans-serif;
 }
 
 .subHeader {
     margin: 0.3rem 0 0 0.1rem;
-    font-family: "FontAwesome";
+
+    /* FIX: was FontAwesome — change to real text font */
+    font-family: "Roboto", system-ui, sans-serif;
+
     font-weight: normal;
     font-size: 1.5rem;
-    color: var(--coalVeryLight)
+    color: var(--coalVeryLight);
 }
 
 .line {
@@ -35,4 +42,9 @@
     width: 100%;
     margin: 1.2rem 0 1rem 0;
     background: var(--greyLight);
+}
+
+/* ICONS ONLY — add this class if needed */
+.icon {
+    font-family: "FontAwesome";
 }

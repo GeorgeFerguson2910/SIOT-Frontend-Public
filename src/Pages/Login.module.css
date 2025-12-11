@@ -50,13 +50,13 @@
 
 .input:focus {
   outline: none;
-  border-color: #2563eb;      
+  border-color: var(--coal);      
   box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
 }
 
 .button {
   margin-top: 10px;
-  background: #2563eb;
+  background: var(--coalDark);
   border: none;
   padding: 12px;
   border-radius: 8px;
@@ -67,7 +67,7 @@
 }
 
 .button:hover:not(:disabled) {
-  background: #1e4fcf;
+  background:var(--coal);
 }
 
 .button:disabled {

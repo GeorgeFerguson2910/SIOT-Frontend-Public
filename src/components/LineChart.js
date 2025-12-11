@@ -70,6 +70,9 @@ export default function LineChart({
           pointRadius: 0,
           borderWidth: 2,
           tension: 0.2,
+          // 👇 Force a visible line + subtle fill
+          borderColor: "rgba(0, 200, 255, 1)",
+          backgroundColor: "rgba(0, 200, 255, 0.15)",
         },
       ],
     };
@@ -78,7 +81,7 @@ export default function LineChart({
   const options = useMemo(
     () => ({
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: false, // we'll control height via CSS
       interaction: { mode: "index", intersect: false },
       plugins: {
         legend: { display: true },
@@ -88,9 +91,7 @@ export default function LineChart({
               const v = ctx.parsed.y;
               const vStr =
                 typeof v === "number" ? v.toFixed(1) : String(v ?? "");
-              return `${label || metric}: ${vStr}${
-                unit ? ` ${unit}` : ""
-              }`;
+              return `${label || metric}: ${vStr}${unit ? ` ${unit}` : ""}`;
             },
           },
         },
@@ -107,17 +108,16 @@ export default function LineChart({
               hour: "HH:mm",
             },
           },
-          grid: { color: "rgba(255, 255, 255, 0.04)" },
-          ticks: { color: "rgba(255, 255, 255, 0.7)" },
+          grid: { color: "rgba(255, 255, 255, 0.1)" },
+          ticks: { color: "rgba(255, 255, 255, 0.8)" },
         },
         y: {
           min: yMin,
           max: yMax,
-          grid: { color: "rgba(255, 255, 255, 0.05)" },
+          grid: { color: "rgba(255, 255, 255, 0.1)" },
           ticks: {
-            color: "rgba(255, 255, 255, 0.7)",
-            callback: (v) =>
-              `${v}${unit ? ` ${unit}` : ""}`,
+            color: "rgba(255, 255, 255, 0.8)",
+            callback: (v) => `${v}${unit ? ` ${unit}` : ""}`,
           },
         },
       },

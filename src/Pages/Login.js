@@ -51,7 +51,7 @@ const handleLogin = async (e) => {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1 className={styles.title}>Login</h1>
+        <h1 className={styles.title}>BBB Digital Twin</h1>
 
         <form onSubmit={handleLogin} className={styles.form}>
           <label className={styles.label}>Email</label>

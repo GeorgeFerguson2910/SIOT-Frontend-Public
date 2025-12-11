@@ -1,9 +1,10 @@
 .root {
   padding: 1.5rem;
-  background: #05070c;
-  color: #ffffff;
-  min-height: 100vh;
+  background: #ffffff;
+  color: #000000;
+  min-height: 100%;
   box-sizing: border-box;
+  font-family: "FontAwesome";
 }
 
 .title {
@@ -12,6 +13,7 @@
 
 .loading {
   padding: 1.5rem;
+  font-family: "Roboto", system-ui, sans-serif;
 }
 
 .metaRow {
@@ -20,6 +22,18 @@
   gap: 1.5rem;
   font-size: 0.9rem;
   margin-bottom: 1rem;
+}
+
+.root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+
+/* Only affects the LivePlant JSX root container */
+.root *::before,
+.root *::after {
+  content: none !important;
 }
 
 .section {
@@ -49,3 +63,15 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+
+.timestamp {
+  /* Force a boring, normal font just for the timestamp */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  /* Turn off any funky ligatures that might map "at" → "@" */
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "dlig" 0, "calt" 0;
+}
+

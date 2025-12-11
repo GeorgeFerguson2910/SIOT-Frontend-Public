@@ -32,6 +32,11 @@ a:hover {
   color: #ffffff;
 }
 
+*::before,
+*::after {
+  content: none !important;
+}
+
 body {
   margin: 0;
   display: flex;

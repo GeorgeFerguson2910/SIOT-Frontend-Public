@@ -2,8 +2,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import styles from './App.module.css';
 
 import Sidebar from './components/Sidebar';
-import PubMed from './Pages/PubMed';
-import PMC from './Pages/PMC';
 import History from './Pages/History';
 import Login from './Pages/Login';
 import LivePlant from './Pages/LivePlant';
@@ -34,30 +32,11 @@ const App = () => {
           {/* Public routes */}
           <Route path="/login" element={<Login />} />
 
-          {/* Protected routes */}
-          <Route
-            path="/PubMed"
-            element={
-              <ProtectedRoute>
-                <PubMed />
-              </ProtectedRoute>
-            }
-          />
-
           <Route
             path="/Live-Plant"
             element={
               <ProtectedRoute>
                 <LivePlant />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/PMC"
-            element={
-              <ProtectedRoute>
-                <PMC />
               </ProtectedRoute>
             }
           />
@@ -72,7 +51,7 @@ const App = () => {
           />
 
           {/* Default redirect */}
-          <Route path="/" element={<Navigate to="/PubMed" />} />
+          <Route path="/" element={<Navigate to="/Live-Plant" />} />
 
           {/* 404 */}
           <Route path="*" element={<div>Not found</div>} />
